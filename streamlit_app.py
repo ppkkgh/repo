@@ -99,4 +99,4 @@ image = Image.open('image/sample.png')
 # Display the image with a caption
 st.image(image, caption='My sample image')
 
-st.write('Hello, *World!* :sunglasses:')
+st.write('Hello, *World!* :sunglasses: is always the beginning!')
