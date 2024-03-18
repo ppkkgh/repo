@@ -104,5 +104,5 @@ st.write('iteration is now 5')
 
 # link sample
 url = "https://github.com/ppkkgh/repo/edit/main/streamlit_app.py"
-st.markdown(f"[streamlit_app.py]({url})", unsafe_allow_html=True)
+st.markdown(f"[source code is: streamlit_app.py]({url})", unsafe_allow_html=True)
 
