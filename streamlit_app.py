@@ -9,6 +9,8 @@ from PIL import Image
 # st.title('Streamlit Test App')
 st.set_page_config(page_title="My Streamlit Test")
 
+st.write('TODO show useful infos from my Mint?')
+
 # test show toml file
 config = toml.load("/mount/src/repo/.streamlit/secrets.toml")
 st.write(config)
