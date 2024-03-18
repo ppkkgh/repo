@@ -20,7 +20,7 @@ for root, dirs, files in os.walk(script_dir):
     # st.write([root, dirs, files])
     for file in files:
         filename = os.path.join(root, file)
-        if filename.find('.git') >= 0:
+        if filename.find('.git') < 0:
             filelist.append(filename)
 st.write(filelist)
 
