@@ -2,6 +2,7 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import time
+from PIL import Image
 
 # st.title('Streamlit Test App')
 st.set_page_config(page_title="My Streamlit Test")
@@ -91,5 +92,11 @@ clicked = my_expander.button('Click me!')
 my_expander1 = st.expander(label='test1')
 my_expander1.write('Hello there 1!')
 clicked1 = my_expander1.button('Click me 1!')
+
+# Open the image file
+image = Image.open('image/sample.png')
+
+# Display the image with a caption
+st.image(image, caption='My sample image')
 
 st.write('Hello, *World!* :sunglasses:')
