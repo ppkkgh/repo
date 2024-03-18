@@ -8,6 +8,10 @@ from PIL import Image
 # st.title('Streamlit Test App')
 st.set_page_config(page_title="My Streamlit Test")
 
+# test show toml file
+config = toml.load("/mount/src/repo/.streamlit/secrets.toml")
+st.write(config)
+
 # Get the directory of the current script
 script_dir = os.path.dirname(os.path.abspath(__file__))
 
