@@ -8,9 +8,15 @@ from PIL import Image
 # st.title('Streamlit Test App')
 st.set_page_config(page_title="My Streamlit Test")
 
+# Get the directory of the current script
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Print the directory
+print("Script directory:", script_dir)
+
 # show files in dir..
 filelist = []
-for root, dirs, files in os.walk("your folder directory"):
+for root, dirs, files in os.walk(script_dir):
     for file in files:
         filename = os.path.join(root, file)
         filelist.append(filename)
