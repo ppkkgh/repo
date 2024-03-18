@@ -92,3 +92,4 @@ my_expander1 = st.expander(label='test1')
 my_expander1.write('Hello there 1!')
 clicked1 = my_expander1.button('Click me 1!')
 
+st.write('Hello, *World!* :sunglasses:')
