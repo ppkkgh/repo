@@ -77,7 +77,7 @@ if st.checkbox('show progress bar'):
     latest_iteration = st.empty()
     bar = st.progress(0)
 
-    for i in range(100):
+    for i in range(5):
       # Update the progress bar with each iteration.
       latest_iteration.text(f'Iteration {i+1}')
       bar.progress(i + 1)
@@ -100,3 +100,4 @@ image = Image.open('image/sample.png')
 st.image(image, caption='My sample image')
 
 st.write('Hello, *World!* :sunglasses: is always the beginning!')
+st.write('iteration is not 5')
