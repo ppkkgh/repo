@@ -2,10 +2,19 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import time
+import os
 from PIL import Image
 
 # st.title('Streamlit Test App')
 st.set_page_config(page_title="My Streamlit Test")
+
+# show files in dir..
+filelist = []
+for root, dirs, files in os.walk("your folder directory"):
+    for file in files:
+        filename = os.path.join(root, file)
+        filelist.append(filename)
+st.write(filelist)
 
 if st.checkbox('show chart'):
     chart_data = pd.DataFrame(
