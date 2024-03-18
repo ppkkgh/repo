@@ -106,3 +106,4 @@ st.write('iteration is now 5')
 url = "https://github.com/ppkkgh/repo/edit/main/streamlit_app.py"
 st.markdown(f"[source code is: streamlit_app.py]({url})", unsafe_allow_html=True)
 
+# why not get notifications?
