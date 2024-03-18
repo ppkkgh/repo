@@ -17,7 +17,7 @@ print("Script directory:", script_dir)
 # show files in dir..
 filelist = []
 for root, dirs, files in os.walk(script_dir):
-    st.write('root:' + root)
+    st.write([root, dirs, files])
     for file in files:
         filename = os.path.join(root, file)
         filelist.append(filename)
