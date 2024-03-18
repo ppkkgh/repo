@@ -100,4 +100,9 @@ image = Image.open('image/sample.png')
 st.image(image, caption='My sample image')
 
 st.write('Hello, *World!* :sunglasses: is always the beginning!')
-st.write('iteration is not 5')
+st.write('iteration is now 5')
+
+# link sample
+url = "https://github.com/ppkkgh/repo/edit/main/streamlit_app.py"
+st.markdown(f"[streamlit_app.py]({url})", unsafe_allow_html=True)
+
