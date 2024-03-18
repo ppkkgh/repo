@@ -17,10 +17,11 @@ print("Script directory:", script_dir)
 # show files in dir..
 filelist = []
 for root, dirs, files in os.walk(script_dir):
-    st.write([root, dirs, files])
+    # st.write([root, dirs, files])
     for file in files:
         filename = os.path.join(root, file)
-        filelist.append(filename)
+        if filename.find('.git') >= 0:
+            filelist.append(filename)
 st.write(filelist)
 
 if st.checkbox('show chart'):
