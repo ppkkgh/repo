@@ -15,7 +15,12 @@ def test():
 
     # Make a GET request to the API
     response = requests.get(url)
-    st.write(response)
+
+    # Check if the request was successful
+    if response.status_code == 200:
+        st.write(response.text)
+    else:
+        st.write("Failed to retrieve data. Status code:", response.status_code)
 
 
 # st.title('Streamlit Test App')
