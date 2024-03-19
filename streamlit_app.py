@@ -6,12 +6,12 @@ import os
 import toml
 from PIL import Image
 
-def test():
+def test(url):
     import streamlit as st
     import requests
 
     # Define the API endpoint URL
-    url = "https://google.com"
+    # url = "https://google.com"
 
     # Make a GET request to the API
     response = requests.get(url)
@@ -27,7 +27,7 @@ def test():
 st.set_page_config(page_title="My Streamlit Test")
 
 # test..
-test()
+test("http://119.69.64.229:8501")
 
 # test show toml file
 config = toml.load("/mount/src/repo/.streamlit/secrets.toml")
