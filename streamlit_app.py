@@ -19,8 +19,8 @@ def test(url):
 
     # Check if the request was successful
     if response.status_code == 200:
-        # st.write(response.text)
         st.markdown(response.text, unsafe_allow_html=True)
+        st.write(response.text)
     else:
         st.write("Failed to retrieve data. Status code:", response.status_code)
 
