@@ -11,8 +11,7 @@ st.set_page_config(page_title="My Streamlit Test")
 
 # iframe test..
 st.write("Embedding an external webpage:")
-url = "https://google.com"
-st.components.iframe(url)
+st.components.iframe("https://google.com")
 
 st.write('TODO show useful infos from my Mint?')
 
