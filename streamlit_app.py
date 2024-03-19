@@ -6,14 +6,30 @@ import os
 import toml
 from PIL import Image
 
+def test():
+    import streamlit as st
+    import requests
+
+    # Define the API endpoint URL
+    url = "https://google.com"
+
+    # Make a GET request to the API
+    response = requests.get(url)
+
+    # Check if the request was successful
+    if response.status_code == 200:
+        data = response.json()
+        st.write("Response Data:")
+        st.write(data)
+    else:
+        st.write("Failed to retrieve data. Status code:", response.status_code)
+
+
 # st.title('Streamlit Test App')
 st.set_page_config(page_title="My Streamlit Test")
 
-# iframe test..
-st.write("Embedding an external webpage:")
-st.components.iframe("https://google.com")
-
-st.write('TODO show useful infos from my Mint?')
+# test..
+test()
 
 # test show toml file
 config = toml.load("/mount/src/repo/.streamlit/secrets.toml")
