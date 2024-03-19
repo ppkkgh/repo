@@ -14,6 +14,7 @@ def test(url):
     # url = "https://google.com"
 
     # Make a GET request to the API
+    st.write(url)
     response = requests.get(url)
 
     # Check if the request was successful
