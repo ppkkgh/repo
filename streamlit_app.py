@@ -9,6 +9,11 @@ from PIL import Image
 # st.title('Streamlit Test App')
 st.set_page_config(page_title="My Streamlit Test")
 
+# iframe test..
+st.write("Embedding an external webpage:")
+url = "https://www.example.com"
+st.components.iframe(url)
+
 st.write('TODO show useful infos from my Mint?')
 
 # test show toml file
@@ -128,6 +133,6 @@ st.write('iteration is now 5')
 
 # link sample
 url = "https://github.com/ppkkgh/repo/edit/main/streamlit_app.py"
-st.markdown(f"[source code is: streamlit_app.py]({url})", unsafe_allow_html=True)
+st.markdown(f"[Edit this code: streamlit_app.py]({url})", unsafe_allow_html=True)
 
 # why not get notifications?
