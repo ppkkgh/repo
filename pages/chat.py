@@ -21,8 +21,6 @@ user_input = st.text_input("Type your message here:")
 
 # Create a button for the user to send their message
 if st.button("Send"):
-    # Append the user's message to the chat_messages list in the session state
-    # st.session_state.chat_messages.append('You: ' + user_input)
     # run command and get output or error
     out, err = execute_command(user_input)
     st.session_state.chat_messages.append({ 'cmd': user_input, 'out': out, 'err': err })
@@ -34,5 +32,4 @@ for message in reversed(st.session_state.chat_messages):
     if message['err']: 
         txt = txt + '\n* err:\n' + message['err']
     st.code(txt)
-    # txt = '*out:\n' + message['out'] + '\n\n*err:\n' + message['err']
-    # st.text_area(label=message['cmd'], value=txt)
+    
