@@ -1,8 +1,9 @@
 import streamlit as st
 import requests
 import json
+from typing import Iterator
 
-def chat_completion(user_prompt, sys_prompt, host, port):
+def chat_completion(user_prompt, sys_prompt, host, port) -> Iterator[str]:
     url = f'http://{host}:{port}/v1/chat/completions'
     headers = {'Content-Type': 'application/json'}
     data = {
@@ -23,16 +24,12 @@ def chat_completion(user_prompt, sys_prompt, host, port):
                     try:
                         json_string = line.decode('utf-8')
                         if json_string == "data: [DONE]":
-                            break
-
-                        # remove leading "data:"
+                            break  # remove leading "data:"
                         json_string = json_string[6:]
                         json_data = json.loads(json_string)
                         content = json_data.get('choices', [{}])[0].get('delta', {}).get('content', '')
-
                         if content:
-                            # Write the streaming data to Streamlit using st.write_stream
-                            st.write_stream(f"{content}")
+                            yield content
                     except json.JSONDecodeError as e:
                         print(f"Error decoding JSON: {line}")
         else:
@@ -43,12 +40,14 @@ def chat_completion(user_prompt, sys_prompt, host, port):
 def main():
     st.title("Chat Completion App")
     user_prompt = st.text_area("Enter your prompt:")
-    sys_prompt = st.text_area("Enter the system prompt (optional):", value="You are a helpful AI assistant.")
-    host = st.text_input("Enter the host:", value="192.168.0.4")
-    port = st.text_input("Enter the port:", value="1234")
-
+    # sys_prompt = st.text_area("Enter the system prompt (optional):", value="You are a helpful AI assistant.")
+    # host = st.text_input("Enter the host:", value="192.168.0.4")
+    # port = st.text_input("Enter the port:", value="1234")
     if st.button("Submit"):
-        chat_completion(user_prompt, sys_prompt, host, port)
+        chat_stream = chat_completion(user_prompt, "You are a helpful AI assistant.", "192.168.0.4", "1234")
+        # for content in chat_stream:
+        #     st.write_stream(content)
+        st.write_stream(chat_stream)
 
 if __name__ == "__main__":
     main()

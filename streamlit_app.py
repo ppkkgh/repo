@@ -137,8 +137,14 @@ my_expander1 = st.expander(label='test1')
 my_expander1.write('Hello there 1!')
 clicked1 = my_expander1.button('Click me 1!')
 
+# Get the directory of the script being run
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Concatenate the directory path with 'image/sample.png'
+image_path = os.path.join(current_dir, 'image', 'sample.png')
+
 # Open the image file
-image = Image.open('image/sample.png')
+image = Image.open(image_path)
 
 # Display the image with a caption
 st.image(image, caption='My sample image')
