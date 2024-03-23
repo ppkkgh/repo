@@ -29,7 +29,7 @@ def test(url):
 st.set_page_config(page_title="My Streamlit Test")
 
 # test..
-test("http://119.69.64.229:8501")
+# test("http://119.69.64.229:8501")
 
 # # test show toml file
 # config = toml.load("/mount/src/repo/.streamlit/secrets.toml")
